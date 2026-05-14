@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>云电脑屏幕</title>
   <style>
     * { margin: 0; padding: 0; }
     body { background: #000; }
@@ -12,7 +13,7 @@
   <script>
     function refresh() {
       document.getElementById('screen').src = 
-        'https://drive.google.com/uc?export=view&id=1yu5pzD76ZrLTxxy4sNyH-83E72MVSFUN&t=' + Date.now();
+        'https://raw.githubusercontent.com/fayuan2025/cloud-screen/main/screen.jpg?t=' + Date.now();
     }
     setInterval(refresh, 3000);
     refresh();
