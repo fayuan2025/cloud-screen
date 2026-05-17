@@ -1,10 +1,29 @@
-user@ubuntu-2gb-ash-1:~$ grep -n "paste_to_doc\|ctrl+\|DISPLAY\|CHROME_WID" ~/cloud-screen/main.py | head -30
-9:os.environ['DISPLAY'] = ':0.0'
-18:CHROME_WID = '79691798'
-59:    subprocess.run(['xdotool', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
-85:def paste_to_doc():
-86:    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
-88:    subprocess.run(['xdotool', 'key', 'ctrl+shift+a'], env=ENV)
-94:    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
-98:    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
-133:                threading.Thread(target=paste_to_doc, daemon=True).start()
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+# 修复1: DISPLAY
+content = content.replace("os.environ['DISPLAY'] = ':0.0'", "os.environ['DISPLAY'] = ':0'")
+
+# 修复2: paste_to_doc 整个函数
+old = """def paste_to_doc():
+    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'ctrl+shift+a'], env=ENV)"""
+
+new = """def paste_to_doc():
+    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)"""
+
+content = content.replace(old, new)
+
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+
+# 验证
+import subprocess
+result = subprocess.run(['grep', '-n', "DISPLAY\\|ctrl+2\\|ctrl+shift", '/home/user/cloud-screen/main.py'], capture_output=True, text=True)
+print(result.stdout)
+print("完成 ✅")
+PYEOF
