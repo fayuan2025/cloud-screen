@@ -1,7 +1,1 @@
-venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ DISPLAY=:0.0 xclip -selection clipboard -o | head -c 100
-哈哈，读到的是刚才粘贴的命令本身！说明 xclip 正常工作。
-
-(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ DISPLAY=:0.0 xclip -selection clipboard -o | head -c 100| head -c 100
-哈哈，读到的是刚才粘贴的命令本身！说明 xclip 正常工作。
-
-现在在云电脑�
+点复制按钮 → 内容在浏览器剪贴板 → 粘贴到 Google Doc → 本机打开 Google Doc 复制
