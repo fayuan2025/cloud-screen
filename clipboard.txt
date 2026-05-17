@@ -1,1 +1,37 @@
-拷Googlesed -i "s/xdotool', 'type', '云拷贝'/xdotool', 'type', 'Google'/" ~/cloud-screen/main.pysed -i "s/xdotool', 'type', '云拷贝'/xdotool', 'type', 'Google'/" ~/cloud-screen/main.py
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """def paste_to_doc():
+    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'ctrl+shift+a'], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'type', '云拷贝'], env=ENV)
+    time.sleep(0.5)
+    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
+    time.sleep(0.8)
+    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
+    time.sleep(0.2)
+    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+new = """def paste_to_doc():
+    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)
+    time.sleep(0.8)
+    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
+    time.sleep(0.2)
+    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('done')
+PYEOF
