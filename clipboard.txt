@@ -1,1 +1,1 @@
-cd ~/cloud-screen && source venv/bin/activate && python3 main.py
+DISPLAY=:0.0 xdotool search --class "chrome" | while read wid; do xdotool getwindowname $wid; done
