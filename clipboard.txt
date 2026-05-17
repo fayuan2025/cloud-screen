@@ -1,1 +1,1 @@
-readClipboard()
+sendCmd({ type: 'clipboard', id: Date.now() })
