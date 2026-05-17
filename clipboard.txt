@@ -1,6 +1,10 @@
-好！现在测试写入Doc：
-
-1. 在云电脑网页上复制一段文字
-2. 点**"📄 写入Doc"**按钮
-
-告诉我发生了什么 ✅
+# 1. Chrome 开机自启
+cat > ~/.config/autostart/chrome.desktop << 'EOF'
+[Desktop Entry]
+Type=Application
+Name=Chrome
+Exec=google-chrome --start-maximized
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+EOF
