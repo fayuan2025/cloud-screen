@@ -1,18 +1,1 @@
-窗口ID变了！现在是 `79691777`，但 main.py 里还是旧的 `79691798`。
-
-修复：
-```bash
-sed -i "s/CHROME_WID = '79691798'/CHROME_WID = '79691777'/" ~/cloud-screen/main.py
-```
-
-验证：
-```bash
-grep CHROME_WID ~/cloud-screen/main.py
-```
-
-然后重启：
-```bash
-pkill -f main.py && sleep 1 && cd ~/cloud-screen && source venv/bin/activate && python3 main.py &
-```
-
-再测试粘贴按钮 ✅
+DISPLAY=:0 xdotool windowactivate 79691777 && sleep 0.3 && DISPLAY=:0 xdotool key --clearmodifiers ctrl+v
