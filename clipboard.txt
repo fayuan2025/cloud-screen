@@ -1,1 +1,1 @@
-DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+2 && sleep 0.8 && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+v
+Gmail MCP 连接
