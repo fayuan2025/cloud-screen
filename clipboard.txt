@@ -1,1 +1,1 @@
-(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ grep -n "Enter\|enter\|keydown\|keypress\|sendEnter\|send_enter" ~/cloud-screen/main.py | head -20
+cat ~/cloud-screen/main.py
