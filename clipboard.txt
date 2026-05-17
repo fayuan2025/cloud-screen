@@ -1,1 +1,1 @@
-DISPLAY=:0.0 xdotool search --name "云拷贝" windowactivate
+DISPLAY=:0.0 xdotool search --onlyvisible --name "云拷贝"
