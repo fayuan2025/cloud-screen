@@ -1,67 +1,17 @@
-(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ python3 << 'PYEOF'
+python3 << 'PYEOF'
 import subprocess, time, os
 
 ENV = dict(os.environ)
 ENV['DISPLAY'] = ':0'
 
-# 先把测试文字放入剪贴板
+# 放入测试文字
 p = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE, env=ENV)
-p.communicate(input='测试粘贴123'.encode('utf-8'))
+p.communicate(input='测试粘贴999'.encode('utf-8'))
 time.sleep(0.5)
 
-methods = [
-    ("1. search --name 云拷贝 + ctrl+v",
-     ['xdotool', 'search', '--name', '云拷贝', 'key', '--clearmodifiers', 'ctrl+v']),
-    ("2. search --name Google + ctrl+v",
-     ['xdotool', 'search', '--name', 'Google', 'key', '--clearmodifiers', 'ctrl+v']),
-    ("3. search --class chrome + key ctrl+v",
-     ['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v']),
-    ("4. type 直接输入",
-     ['xdotool', 'search', '--name', '云拷贝', 'type', '--clearmodifiers', '测试输入456']),
-    ("5. focus + ctrl+v (77594651)",
-     ['xdotool', 'windowfocus', '77594651']),
-    ("6. focus + ctrl+v (79691777)",
-     ['xdotool', 'windowfocus', '79691777']),
-    ("7. focus + ctrl+v (79691779)",
-     ['xdotool', 'windowfocus', '79691779']),
-]
-
-for name, cmd in methods[:4]:
-    print(f'试: {name}')
-    r = subprocess.run(cmd, env=ENV, capture_output=True, text=True)
-    print(f'  stdout: {r.stdout.strip()}')
-    print(f'  stderr: {r.stderr.strip()}')
-    time.sleep(1)
-
-# 方法5-7: windowfocus 后发 ctrl+v
-for name, cmd in methods[4:]:
-    print(f'试: {name}')
-PYEOF('测试完成，看 Doc 里哪个方法有效 ✅')ip()}')rmodifiers', 'ctrl+v'], env=ENV, capture_output=True, text=True)
-试: 1. search --name 云拷贝 + ctrl+v
-  stdout: 
-  stderr: 
-试: 2. search --name Google + ctrl+v
-  stdout: 
-  stderr: 
-试: 3. search --class chrome + key ctrl+v
-  stdout: 
-  stderr: 
-试: 4. type 直接输入
-  stdout: 
-  stderr: 
-试: 5. focus + ctrl+v (77594651)
-  stderr: 
-  ctrl+v stderr: 
-试: 6. focus + ctrl+v (79691777)
-  stderr: X Error of failed request:  BadMatch (invalid parameter attributes)
-  Major opcode of failed request:  42 (X_SetInputFocus)
-  Serial number of failed request:  18
-  Current serial number in output stream:  18
-  ctrl+v stderr: 
-试: 7. focus + ctrl+v (79691779)
-  stderr: X Error of failed request:  BadMatch (invalid parameter attributes)
-  Major opcode of failed request:  42 (X_SetInputFocus)
-  Serial number of failed request:  18
-  Current serial number in output stream:  20
-  ctrl+v stderr: 
-测试完成，看 Doc 里哪个方法有效 ✅
+# 先切到第2个标签，再粘贴
+subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+2'], env=ENV)
+time.sleep(0.8)
+subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
+print('完成，看 Doc 有没有出现 测试粘贴999')
+PYEOF
