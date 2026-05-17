@@ -1,1 +1,1 @@
-sed -i "s/xdotool', 'type', '云拷贝'/xdotool', 'type', 'Google'/" ~/cloud-screen/main.py
+拷Googlesed -i "s/xdotool', 'type', '云拷贝'/xdotool', 'type', 'Google'/" ~/cloud-screen/main.pysed -i "s/xdotool', 'type', '云拷贝'/xdotool', 'type', 'Google'/" ~/cloud-screen/main.py
