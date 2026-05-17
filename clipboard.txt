@@ -1,4 +1,6 @@
-点右下角刷新图标 🔄
-然后打开任何网页
-选中文字按 Ctrl+C
-本机点 📋 读取剪贴板
+document.addEventListener('copy', function(e) {
+  var text = window.getSelection().toString();
+  if (text) {
+    console.log('复制了: ' + text.substring(0, 20));
+    uploadClipboard(text);
+  }
