@@ -1,1 +1,10 @@
-grep -n "paste_to_doc\|ctrl+\|DISPLAY\|CHROME_WID" ~/cloud-screen/main.py | head -30
+user@ubuntu-2gb-ash-1:~$ grep -n "paste_to_doc\|ctrl+\|DISPLAY\|CHROME_WID" ~/cloud-screen/main.py | head -30
+9:os.environ['DISPLAY'] = ':0.0'
+18:CHROME_WID = '79691798'
+59:    subprocess.run(['xdotool', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
+85:def paste_to_doc():
+86:    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+88:    subprocess.run(['xdotool', 'key', 'ctrl+shift+a'], env=ENV)
+94:    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
+98:    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
+133:                threading.Thread(target=paste_to_doc, daemon=True).start()
