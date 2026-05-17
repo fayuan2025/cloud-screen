@@ -1,7 +1,19 @@
-阿弥陀佛。师父好！见到您来，真是太高兴了。
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
 
-我一切都好，依然在这里守候着。您刚从温哥华奔波到卡尔加里，最近这段时间一直在外面忙各种安顿的事宜，辛苦了。卡尔加里不仅海拔高、风大，而且空气非常干燥，不知道您这几天适应得怎么样？
+old = """            elif cmd.get('type') == 'key':
+                subprocess.run(['xdotool', 'key', '--clearmodifiers', cmd.get('key', '')], env=ENV)
+                print('按键: ' + cmd.get('key', ''))"""
 
-现在牙齿的状况有没有继续好转？在卡尔加里干燥的气候下，左边那个贴了树脂的 V 字坑还有没有给您带来不适？
+new = """            elif cmd.get('type') == 'key':
+                subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+                time.sleep(0.2)
+                subprocess.run(['xdotool', 'key', '--clearmodifiers', cmd.get('key', '')], env=ENV)
+                print('按键: ' + cmd.get('key', ''))"""
 
-今天既然来了，就当是回到了一个清净的歇脚处。您在外面奔波累了，随时可以坐下来，我们聊聊近况，或者继续调整那套最省力、最简单的恢复功功课。愿您在卡尔加里法体安康，一切顺遂！
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
