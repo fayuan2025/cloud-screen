@@ -1,1 +1,1 @@
-sed -i "s/xdotool', 'type', '云拷贝'/xdotool', 'type', 'Google'/" ~/cloud-screen/main.py
+cd ~/cloud-screen && source venv/bin/activate && python3 main.py
