@@ -1,1 +1,1 @@
-DISPLAY=:0.0 xdotool windowactivate 79691798 && sleep 0.3 && DISPLAY=:0.0 xdotool key ctrl+shift+a && sleep 0.3 && DISPLAY=:0.0 xdotool type '云拷贝' && sleep 0.5 && DISPLAY=:0.0 xdotool key Return
+cd ~/cloud-screen && source venv/bin/activate && python3 main.py
