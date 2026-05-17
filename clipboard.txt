@@ -1,4 +1,1 @@
-user@ubuntu-2gb-ash-1:~$ echo $DISPLAY
-who
-:0.0
-user     tty7         2026-05-17 03:26 (:0)
+DISPLAY=:0 xdotool mousemove 640 400 click 1
