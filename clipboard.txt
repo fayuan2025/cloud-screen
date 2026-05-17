@@ -1,8 +1,6 @@
-user@ubuntu-2gb-ash-1:~$ cat ~/.config/autostart/*.desktop 2>/dev/null || crontab -l 2>/dev/null
-[Desktop Entry]
-Type=Application
-Name=Cloud Screen
-Exec=/bin/bash -c 'cd /home/user/cloud-screen && source venv/bin/activate && python3 main.py'
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
+好！现在测试写入Doc：
+
+1. 在云电脑网页上复制一段文字
+2. 点**"📄 写入Doc"**按钮
+
+告诉我发生了什么 ✅
