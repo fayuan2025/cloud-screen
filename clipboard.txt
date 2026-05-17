@@ -1,1 +1,2 @@
-DISPLAY=:0.0 xdotool search --onlyvisible --name "云拷贝"
+user@ubuntu-2gb-ash-1:~$ DISPLAY=:0.0 xdotool search --onlyvisible --name "云拷 贝"
+user@ubuntu-2gb-ash-1:~$
