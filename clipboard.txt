@@ -1,1 +1,1 @@
-云拷贝 - Google 文档
+DISPLAY=:0.0 xdotool search --name "云拷贝" windowactivate
