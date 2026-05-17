@@ -1,2 +1,1 @@
-(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ DISPLAY=:0 xdotool windowactivate 79691779 && sleep 0.3 && DISPLAY=:0 xdotool key --clearmodifiers ctrl+v
-XGetWindowProperty[_NET_WM_DESKTOP] failed (code=1)
+DISPLAY=:0 xdotool windowactivate 77594651 && sleep 0.3 && DISPLAY=:0 xdotool key --clearmodifiers ctrl+v
