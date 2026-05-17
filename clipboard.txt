@@ -1,4 +1,10 @@
-然后测试：
+Apps Script 找不到 `clipboard.txt`。问题是它用文件名搜索 Google Drive，但文件在 GitHub 不在 Drive。
 
-云电脑 Chrome 选中文字按 Ctrl+C
-本机点 📋 读取剪贴板
+需要改 Apps Script 的 clipboard action，改成从 GitHub API 读取：粘贴到 Apps Script，保存 → 部署**新版本**。
+
+然后测试：
+1. 云电脑 Chrome 选中文字按 Ctrl+C
+2. 本机点 **📋 读取剪贴板**
+3. 等4秒
+
+✅
