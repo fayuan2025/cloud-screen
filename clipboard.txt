@@ -1,1 +1,4 @@
-DISPLAY=:0 xdotool search --class "chrome" | head -5
+user@ubuntu-2gb-ash-1:~$ DISPLAY=:0 xdotool search --class "chrome" | head -5
+79691777
+79691779
+77594651
