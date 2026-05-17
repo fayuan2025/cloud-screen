@@ -1,9 +1,7 @@
-问题是网页复制按钮的内容没有写入系统剪贴板。
-
-让我直接测试：在云电脑 Chrome 点网页上的复制按钮后，马上在终端运行：
-
-```bash
-DISPLAY=:0.0 xclip -selection clipboard -o
-```
-
-有没有显示复制的内容？✅
+cd ~/cloud-screen && source venv/bin/activate && python3 -c "
+import subprocess, os
+ENV = dict(os.environ, DISPLAY=':0.0')
+r = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV, timeout=2)
+text = r.stdout.decode('utf-8', errors='replace')
+print(repr(text[:50]))
+"
