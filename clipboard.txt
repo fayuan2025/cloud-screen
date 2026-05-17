@@ -1,1 +1,1 @@
-DISPLAY=:0.0 xdotool search --name "文档"
+云拷贝 - Google 文档
