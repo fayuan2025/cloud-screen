@@ -1,1 +1,1 @@
-DISPLAY=:0 xdotool windowactivate 77594651 && sleep 0.3 && DISPLAY=:0 xdotool key --clearmodifiers ctrl+v
+DISPLAY=:0 xdotool search --name "云拷贝" key --clearmodifiers ctrl+v
