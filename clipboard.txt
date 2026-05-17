@@ -1,1 +1,1 @@
-oogleGoogle好！用 Ctrl+2 直接切换到第2个标签页，不需要搜索：  ```bash sed -i "s/subprocess.run(\['xdotool', 'key', 'ctrl+shift+a'\], env=ENV)/subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)/" ~/cloud-screen/main.py ```  太复杂，直接重写 `paste_to_doc` 函数：  ```bash python3 << 'PYEOF' with open('/home/user/cloud-screen/main.py', 'r') as f:     content = f.read()  old = """def paste_to_doc():     subprocess.run(['xdotool'
+DISPLAY=:0.0 xdotool mousemove 640 400 click 1
