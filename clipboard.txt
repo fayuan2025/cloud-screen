@@ -1,1 +1,1 @@
-你好吗
+grep -n "Enter\|enter\|keydown\|keypress\|sendEnter\|send_enter" ~/cloud-screen/main.py | head -20
