@@ -1,2 +1,1 @@
-user@ubuntu-2gb-ash-1:~$ DISPLAY=:0 xdotool key ctrl+End
-^[[1;5Fuser@ubuntu-2gb-ash-1:~$
+DISPLAY=:0 xdotool mousemove 640 400 click 1 && sleep 0.3 && DISPLAY=:0 xdotool key ctrl+End
