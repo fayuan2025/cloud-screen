@@ -1,1 +1,1 @@
-按到底部好像无效
+DISPLAY=:0 xdotool key ctrl+End
