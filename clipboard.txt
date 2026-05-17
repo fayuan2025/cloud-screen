@@ -1,1 +1,1 @@
-https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit?tab=t.0
+cd ~/cloud-screen && source venv/bin/activate && python3 main.py
