@@ -1,1 +1,9 @@
+哈哈，读到的是刚才粘贴的命令本身！说明 xclip 正常工作。
+
+现在在云电脑网页点复制按钮，然后马上运行：
+
+```bash
 DISPLAY=:0.0 xclip -selection clipboard -o | head -c 100
+```
+
+看看内容是什么？✅
