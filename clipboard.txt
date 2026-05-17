@@ -1,1 +1,1 @@
-DISPLAY=:0.0 xdotool search --name "Google Docs"
+DISPLAY=:0.0 xdotool search --name "文档"
