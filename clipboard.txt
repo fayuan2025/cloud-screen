@@ -1,1 +1,25 @@
-cd ~/cloud-screen && source venv/bin/activate && python3 main.py 2>&1 | tee /tmp/log.txt | grep --line-buffered "paste\|Doc\|监听\|错误"
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """# 自动获取 Chrome 窗口ID
+def get_chrome_wid():
+    r = subprocess.run(['xdotool', 'search', '--class', 'chrome'], capture_output=True, text=True, env=ENV)
+    ids = r.stdout.strip().split()
+    return ids[-1] if ids else None
+
+CHROME_WID = get_chrome_wid()
+print('Chrome WID:', CHROME_WID)"""
+
+new = """def get_chrome_wid():
+    r = subprocess.run(['xdotool', 'search', '--class', 'chrome'], capture_output=True, text=True, env=ENV)
+    ids = r.stdout.strip().split()
+    return ids[-1] if ids else '0'"""
+
+content = content.replace(old, new)
+content = content.replace("CHROME_WID", "get_chrome_wid()")
+
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
