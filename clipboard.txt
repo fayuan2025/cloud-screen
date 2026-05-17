@@ -1,48 +1,21 @@
-好！更新 `paste_to_doc` 函数：
-
-```bash
 python3 << 'PYEOF'
 with open('/home/user/cloud-screen/main.py', 'r') as f:
     content = f.read()
 
-old = """def paste_to_doc():
-    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
-    time.sleep(0.3)
-    subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)
-    time.sleep(0.8)
-    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
-    time.sleep(0.3)
-    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
-    time.sleep(0.2)
-    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
-    print('已粘贴到Doc')"""
-
-new = """def paste_to_doc():
-    # 打开新标签，直接导航到 Doc
-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+t'], env=ENV)
+old = """    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+t'], env=ENV)
     time.sleep(1)
     doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', doc_url], env=ENV)
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', doc_url], env=ENV)"""
+
+new = """    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+t'], env=ENV)
+    time.sleep(1)
+    doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+l'], env=ENV)
     time.sleep(0.3)
-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'Return'], env=ENV)
-    time.sleep(4)
-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+End'], env=ENV)
-    time.sleep(0.3)
-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'Return'], env=ENV)
-    time.sleep(0.2)
-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
-    print('已粘贴到Doc')"""
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', doc_url], env=ENV)"""
 
 content = content.replace(old, new)
 with open('/home/user/cloud-screen/main.py', 'w') as f:
     f.write(content)
 print('完成 ✅')
 PYEOF
-```
-
-重启：
-```bash
-pkill -f main.py && sleep 1 && cd ~/cloud-screen && source venv/bin/activate && python3 main.py &
-```
-
-完成后点**"📄 写入Doc"**按钮测试 ✅
