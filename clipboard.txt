@@ -1,4 +1,1 @@
-user@ubuntu-2gb-ash-1:~$ DISPLAY=:0 xdotool search --class "chrome" | head -5
-79691777
-79691779
-77594651
+sed -i "s/CHROME_WID = '79691798'/CHROME_WID = '79691777'/" ~/cloud-screen/main.py
