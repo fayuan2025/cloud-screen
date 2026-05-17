@@ -1,1 +1,22 @@
-DISPLAY=:0 xdotool mousemove 640 400 click 1 && sleep 0.3 && DISPLAY=:0 xdotool key ctrl+End
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """            elif cmd.get('type') == 'paste_doc':
+                threading.Thread(target=paste_to_doc, daemon=True).start()"""
+
+new = """            elif cmd.get('type') == 'paste_doc':
+                threading.Thread(target=paste_to_doc, daemon=True).start()
+            elif cmd.get('type') == 'scroll':
+                times = int(cmd.get('times', 5))
+                btn = '4' if cmd.get('dir') == 'up' else '5'
+                subprocess.run(['xdotool', 'mousemove', '640', '400'], env=ENV)
+                for _ in range(times):
+                    subprocess.run(['xdotool', 'click', btn], env=ENV)
+                print('滚动 ' + cmd.get('dir', 'down'))"""
+
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
