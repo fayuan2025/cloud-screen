@@ -1,1 +1,1 @@
-sed -i "s/CHROME_WID = '79691798'/CHROME_WID = '79691777'/" ~/cloud-screen/main.py
+grep CHROME_WID ~/cloud-screen/main.py
