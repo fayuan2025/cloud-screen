@@ -1,1 +1,4 @@
-DISPLAY=:0.0 xdotool search --class "chrome" | while read wid; do xdotool getwindowname $wid; done
+user@ubuntu-2gb-ash-1:~$ DISPLAY=:0.0 xdotool search --class "chrome" | while read wid; do xdotool getwindowname $wid; done
+google-chrome
+google-chrome
+用Google Sheet App开发远程桌面应用 - Claude - Google Chrome
