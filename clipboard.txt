@@ -1,1 +1,6 @@
-chrome://extensions/
+打开 chrome://extensions/
+找到 Clipboard Sync
+点右下角刷新图标 🔄
+然后打开任何网页
+选中文字按 Ctrl+C
+本机点 📋 读取剪贴板
