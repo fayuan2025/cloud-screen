@@ -1,1 +1,4 @@
-sendCmd({ type: 'clipboard', id: Date.now() })
+然后测试：
+
+云电脑 Chrome 选中文字按 Ctrl+C
+本机点 📋 读取剪贴板
