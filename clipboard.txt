@@ -1,21 +1,25 @@
-85:def paste_to_doc():
-86-    doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
-87-    # 用 xdg-open 直接在 Chrome 打开新标签
-88-    subprocess.Popen(['xdg-open', doc_url], env=ENV)
-89-    time.sleep(5)
-90-    # 粘贴
-91-    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
-92-    print('已粘贴到Doc')
-93-
-94-def check_clipboard():
-95-    global last_clipboard
-96-    try:
-97-        r = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV, timeout=2)
-98-        text = r.stdout.decode('utf-8', errors='replace').strip()
-99-        if text and text != last_clipboard:
-100-            last_clipboard = text
-101-            upload_clipboard()
-102-    except:
-103-        pass
-104-
-105-def listen_cmd():
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """def paste_to_doc():
+    doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
+    # 用 xdg-open 直接在 Chrome 打开新标签
+    subprocess.Popen(['xdg-open', doc_url], env=ENV)
+    time.sleep(5)
+    # 粘贴
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+new = """def paste_to_doc():
+    doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
+    subprocess.Popen(['google-chrome', '--new-tab', doc_url], env=ENV)
+    time.sleep(5)
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
