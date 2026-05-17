@@ -1,1 +1,1 @@
-DISPLAY=:0.0 xdotool mousemove 640 400 click 1
+DISPLAY=:0.0 xdotool mousemove 640 400
