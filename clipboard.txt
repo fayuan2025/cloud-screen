@@ -1,1 +1,1 @@
-云拷贝 - Google 文档
+DISPLAY=:0.0 xdotool windowactivate 79691798 && sleep 0.3 && DISPLAY=:0.0 xdotool key ctrl+shift+a && sleep 0.3 && DISPLAY=:0.0 xdotool type 'Google' && sleep 0.5 && DISPLAY=:0.0 xdotool key Return
