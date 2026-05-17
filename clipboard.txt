@@ -1,7 +1,1 @@
-user@ubuntu-2gb-ash-1:~$ grep -n -A5 "type.*key" ~/cloud-screen/main.py
-128:            elif cmd.get('type') == 'key':
-129-                subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
-130-                time.sleep(0.2)
-131-                subprocess.run(['xdotool', 'key', '--clearmodifiers', cmd.get('key', '')], env=ENV)
-132-                print('按键: ' + cmd.get('key', ''))
-133-            elif cmd.get('type') == 'clipboard':
+DISPLAY=:0 xdotool search --class "chrome" | head -5
