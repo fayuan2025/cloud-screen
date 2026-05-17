@@ -1,2 +1,55 @@
+好！用 Ctrl+2 直接切换到第2个标签页，不需要搜索：
+
+```bash
+sed -i "s/subprocess.run(\['xdotool', 'key', 'ctrl+shift+a'\], env=ENV)/subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)/" ~/cloud-screen/main.py
+```
+
+太复杂，直接重写 `paste_to_doc` 函数：
+
+```bash
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """def paste_to_doc():
+    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'ctrl+shift+a'], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'type', '云拷贝'], env=ENV)
+    time.sleep(0.5)
+    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
+    time.sleep(0.8)
+    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
+    time.sleep(0.2)
+    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+new = """def paste_to_doc():
+    subprocess.run(['xdotool', 'windowactivate', CHROME_WID], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)
+    time.sleep(0.8)
+    subprocess.run(['xdotool', 'key', 'ctrl+End'], env=ENV)
+    time.sleep(0.3)
+    subprocess.run(['xdotool', 'key', 'Return'], env=ENV)
+    time.sleep(0.2)
+    subprocess.run(['xdotool', 'key', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('done')
+PYEOF
+```
+
+然后运行：
+```bash
 pkill -f main.py
 cd ~/cloud-screen && source venv/bin/activate && python3 main.py
+```
+
+测试 **"📄 写入Doc"** ✅
