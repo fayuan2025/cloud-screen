@@ -1,1 +1,40 @@
+代码只有一个 `xdg-open`，但打开了两个标签。原因是**按钮点了两次**，或者命令发送了两次。
+
+Apps Script 里 `pasteToDoc()` 函数有防重复机制吗？看看——点"📄 写入Doc"后，等够5秒再看，是同时开两个还是先后开两个？
+
+另外，`xdg-open` 改成直接用 Chrome 命令更可控：
+
+```bash
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """def paste_to_doc():
+    doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
+    # 用 xdg-open 直接在 Chrome 打开新标签
+    subprocess.Popen(['xdg-open', doc_url], env=ENV)
+    time.sleep(5)
+    # 粘贴
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+new = """def paste_to_doc():
+    doc_url = 'https://docs.google.com/document/d/1cV6eqGBgVLj-xK5Z1opY9mr4Sm77zOfjtITPjSlXq1A/edit'
+    subprocess.Popen(['google-chrome', '--new-tab', doc_url], env=ENV)
+    time.sleep(5)
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
+    print('已粘贴到Doc')"""
+
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
+```
+
+重启：
+```bash
 pkill -f main.py && sleep 1 && cd ~/cloud-screen && source venv/bin/activate && python3 main.py &
+```
+
+测试，只点一次按钮，告诉我结果 ✅
