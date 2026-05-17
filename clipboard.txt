@@ -1,4 +1,4 @@
-python3 << 'PYEOF'
+user@ubuntu-2gb-ash-1:~$ python3 << 'PYEOF'
 with open('/home/user/cloud-screen/main.py', 'r') as f:
     content = f.read()
 
@@ -21,9 +21,9 @@ content = content.replace(old, new)
 with open('/home/user/cloud-screen/main.py', 'w') as f:
     f.write(content)
 
-# 验证
-import subprocess
-result = subprocess.run(['grep', '-n', "DISPLAY\\|ctrl+2\\|ctrl+shift", '/home/user/cloud-screen/main.py'], capture_output=True, text=True)
-print(result.stdout)
-print("完成 ✅")
-PYEOF
+PYEOF("完成 ✅")out)n.py'], capture_output=True, text=True)ctrl+shift", '/home/u
+9:os.environ['DISPLAY'] = ':0'
+88:    subprocess.run(['xdotool', 'key', 'ctrl+2'], env=ENV)
+
+完成 ✅
+user@ubuntu-2gb-ash-1:~$
