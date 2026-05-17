@@ -1,10 +1,1 @@
-明白了！代码里没有"粘贴到Doc"，说明新代码没有贴进去。
-
-请重新操作：
-1. 打开下载的 `cloud-screen.gs` 文件
-2. **全选**（Ctrl+A）复制
-3. 到 Apps Script 编辑器**全选**（Ctrl+A）再贴入
-4. 保存（Ctrl+S）
-5. 重新部署
-
-完成后搜索 `粘贴到Doc` 确认有没有 ✅
+DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+2 && sleep 0.8 && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+v
