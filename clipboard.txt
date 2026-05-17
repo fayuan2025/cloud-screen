@@ -1,3 +1,1 @@
-user@ubuntu-2gb-ash-1:~$ DISPLAY=:0.0 xdotool search --onlyvisible --class "chrome"
-79691798
-user@ubuntu-2gb-ash-1:~$
+DISPLAY=:0.0 xdotool windowactivate 79691798
