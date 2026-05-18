@@ -1,16 +1,1 @@
-python3 << 'PYEOF'
-import subprocess, time, os
-ENV = dict(os.environ)
-ENV['DISPLAY'] = ':0'
-
-# 放文字到剪贴板
-p = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE, env=ENV)
-p.communicate(input='测试粘贴'.encode('utf-8'))
-time.sleep(0.3)
-
-print('3秒后粘贴，请点击Claude.ai输入框！')
-time.sleep(3)
-
-subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)
-print('完成')
-PYEOF
+测试粘贴
