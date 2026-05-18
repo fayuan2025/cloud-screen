@@ -1,1 +1,44 @@
-测试ABC123
+python3 << 'PYEOF'
+import subprocess, time, os
+ENV = dict(os.environ)
+ENV['DISPLAY'] = ':0'
+
+test_text = "测试ABC123"
+
+def set_clip(text):
+    p = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE, env=ENV)
+    p.communicate(input=text.encode('utf-8'))
+    time.sleep(0.3)
+
+def clear_input():
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+a'], env=ENV)
+    time.sleep(0.1)
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'Delete'], env=ENV)
+    time.sleep(0.3)
+
+methods = [
+    ("方法1: xdotool type delay=100", lambda: subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '100', test_text], env=ENV)),
+    ("方法2: xdotool type delay=200", lambda: subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '200', test_text], env=ENV)),
+    ("方法3: ctrl+v", lambda: [set_clip(test_text), subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+v'], env=ENV)]),
+    ("方法4: shift+Insert", lambda: [set_clip(test_text), subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'shift+Insert'], env=ENV)]),
+    ("方法5: ctrl+shift+v", lambda: [set_clip(test_text), subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'ctrl+shift+v'], env=ENV)]),
+]
+
+results = []
+
+print('5秒后开始，请点击Claude.ai输入框并保持！')
+time.sleep(5)
+
+for name, fn in methods:
+    clear_input()
+    time.sleep(0.5)
+    fn()
+    time.sleep(1)
+    result = input(f'{name} → 输入框出现什么？(输入y=完整/n=没有/p=部分): ')
+    results.append((name, result))
+
+print('\n===== 结果汇总 =====')
+for name, result in results:
+    status = '✅ 有效' if result=='y' else ('⚠️ 部分' if result=='p' else '❌ 无效')
+    print(f'{status} {name}')
+PYEOF
