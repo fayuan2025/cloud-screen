@@ -1,2 +1,3 @@
-cat ~/cloud-screen/extension/background.js
-cat ~/cloud-screen/extension/content.js
+cp /path/to/downloads/manifest.json ~/cloud-screen/extension/
+cp /path/to/downloads/background.js ~/cloud-screen/extension/
+cp /path/to/downloads/content.js ~/cloud-screen/extension/
