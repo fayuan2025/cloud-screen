@@ -1,1 +1,1 @@
-用Google Sheet App开发远程桌面应用
+https://script.google.com/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec
