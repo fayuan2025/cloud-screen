@@ -1,1 +1,13 @@
-发
+(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ pkill -f main.py && sleep 1 && cd ~/cloud-screen && source venv/bin/activate && python3 main.py
+启动云电脑控制...
+截图和监听已启动！
+剪贴板已上传
+截图 03:08:00
+截图 03:08:02
+点击 399 684
+截图 03:08:05
+截图 03:08:09
+输入: 发
+发送+Enter
+截图 03:08:12
+剪贴板已上传
