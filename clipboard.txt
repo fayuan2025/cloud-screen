@@ -1,1 +1,1 @@
-curl -s https://api.github.com/repos/fayuan2025/cloud-screen/contents/control.json | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
+pkill -f main.py && sleep 1 && cd ~/cloud-screen && source venv/bin/activate && python3 main.py 2>&1 | grep -E "点击|输入|按键|错误|监听|启动"
