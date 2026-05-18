@@ -1,1 +1,18 @@
-sleep 2 && DISPLAY=:0 xdotool search --class chrome type --clearmodifiers --delay 100 "测试一二三四五六七八九十"
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """def type_text(text):
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '50', text], env=ENV)
+    print('输入: ' + text[:20])"""
+
+new = """def type_text(text):
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '100', text], env=ENV)
+    print('输入: ' + text[:20])"""
+
+content = content.replace(old, new)
+
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
