@@ -1,1 +1,1 @@
-sleep 3 && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers Return
+sleep 3 && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers KP_Enter
