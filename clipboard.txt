@@ -1,1 +1,11 @@
-grep -n -A6 "type_enter" ~/cloud-screen/main.py
+user@ubuntu-2gb-ash-1:~$ 截图 03:21:02
+grep -n -A6 "type_enter" ~/cloud-screen/main.py截图 03:21:05
+                         grep -n -A6 "type_enter" ~/cloud-screen/main.py
+130:            elif cmd.get('type') == 'type_enter':
+131-                type_text(cmd.get('text', ''))
+132-                time.sleep(0.5)
+133-                subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'Return'], env=ENV)
+134-                print('发送+Enter')
+135-            elif cmd.get('type') == 'key':
+136-                subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', cmd.get('key', '')], env=ENV)
+user@ubuntu-2gb-ash-1:~$ 截图 03:21:09
