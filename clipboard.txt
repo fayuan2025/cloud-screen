@@ -1,3 +1,1 @@
-截图 03:22:26
-输入: 发送
-发送+Enter
+sleep 2 && DISPLAY=:0 xdotool search --class chrome type --clearmodifiers --delay 100 "测试"
