@@ -1,13 +1,1 @@
-现有 Web App 加一个参数 `?mode=clip`，云电脑打开这个 URL 就显示剪贴板同步页面。
-
-更新 Apps Script：v3.6 完成！
-
-**使用方法：**
-
-1. 贴入新代码，重新部署
-2. 云电脑打开：`你的WebApp网址?mode=clip`
-3. 在云电脑网页复制文字
-4. 点**"📋 同步剪贴板"**按钮
-5. 本机点**"📋 读取剪贴板"**
-
-这样完全用浏览器剪贴板，不依赖 xclip ✅
+句法错误：SyntaxError: Illegal return statement 行数：28 文件：代码.gs
