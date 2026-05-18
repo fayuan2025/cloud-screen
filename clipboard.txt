@@ -1,1 +1,1 @@
-你
+curl -s https://api.github.com/repos/fayuan2025/cloud-screen/contents/control.json | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
