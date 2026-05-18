@@ -1,2 +1,18 @@
-ls ~/cloud-screen/extension/
+user@ubuntu-2gb-ash-1:~$ ls ~/cloud-screen/extension/
 cat ~/cloud-screen/extension/manifest.json
+background.js  content.js  manifest.json
+{
+  "manifest_version": 3,
+  "name": "Clipboard Sync",
+  "version": "1.0",
+  "description": "同步剪贴板到GitHub",
+  "permissions": ["clipboardRead", "storage"],
+  "host_permissions": ["https://api.github.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }]
+}
