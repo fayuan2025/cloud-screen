@@ -1,27 +1,45 @@
-user@ubuntu-2gb-ash-1:~$ python3 << 'PYEOF'
-import subprocess, requests, time, os
-ENV = dict(os.environ)
-ENV['DISPLAY'] = ':0'
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
 
-URL = 'https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec'
+old = """def upload_clipboard():
+    global clip_sha
+    try:
+        r = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV, timeout=2)
+        text = r.stdout.decode('utf-8', errors='replace').strip()
+        if not text:
+            text = '(剪贴板为空)'
+        content = base64.b64encode(text.encode('utf-8')).decode('utf-8')
+        url = 'https://api.github.com/repos/' + GITHUB_USER + '/' + GITHUB_REPO + '/contents/' + CLIP_FILE
+        if not clip_sha:
+            r2 = requests.get(url, headers=github_headers)
+            if r2.status_code == 200:
+                clip_sha = r2.json().get('sha')
+        data = {'message': 'clipboard', 'content': content}
+        if clip_sha:
+            data['sha'] = clip_sha
+        r3 = requests.put(url, json=data, headers=github_headers)
+        if r3.status_code in [200, 201]:
+            clip_sha = r3.json()['content']['sha']
+            print('剪贴板已上传')
+    except Exception as e:
+        print('剪贴板错误: ' + str(e))"""
 
-# 1. 把测试文字放入云电脑剪贴板
-test_text = '云电脑同步测试XYZ'
-p = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE, env=ENV)
-p.communicate(input=test_text.encode('utf-8'))
-print('1. 已放入剪贴板:', test_text)
-time.sleep(0.5)
+new = """CLIP_SYNC_URL = 'https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec'
 
-# 2. 读取剪贴板确认
-r = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV)
-clip_content = r.stdout.decode('utf-8', errors='replace').strip()
-print('2. 剪贴板内容:', clip_content)
+def upload_clipboard():
+    try:
+        r = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV, timeout=2)
+        text = r.stdout.decode('utf-8', errors='replace').strip()
+        if not text:
+            text = '(剪贴板为空)'
+        requests.get(CLIP_SYNC_URL + '?action=save&text=' + requests.utils.quote(text), allow_redirects=True, timeout=5)
+        print('剪贴板已上传')
+    except Exception as e:
+        print('剪贴板错误: ' + str(e))"""
 
-# 3. 直接上传到 Apps Script
-r = requests.get(URL + '?action=save&text=' + requests.utils.quote(clip_content)PYEOFrint('❌ 失败，内容不符') 剪贴板同步正常')irects=True)
-1. 已放入剪贴板: 云电脑同步测试XYZ
-2. 剪贴板内容: 云电脑同步测试XYZ
-3. 上传结果: ok
-4. 读取结果: 云电脑同步测试XYZ
-✅ 成功！云电脑→本机剪贴板同步正常
-user@ubuntu-2gb-ash-1:~$
+content = content.replace(old, new)
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
