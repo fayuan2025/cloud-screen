@@ -1,1 +1,1 @@
-试试
+DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+v
