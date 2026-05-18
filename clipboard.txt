@@ -1,1 +1,1 @@
-chrome://extensions/
+Chrome 打开 chrome://extensions/ 重新加载扩展
