@@ -1,10 +1,1 @@
-截图 03:33:46
-截图 03:33:50
-截图 03:33:53
-截图 03:33:58
-截图 03:34:02
-截图 03:34:05
-点击 525 676
-输入: 好
-截图 03:34:13
-发送+Enter
+sleep 3 && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers Return
