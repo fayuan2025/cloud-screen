@@ -1,1 +1,1 @@
-sleep 3 && echo "测试一二三" | DISPLAY=:0 xclip -selection clipboard && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+v
+测试一二三
