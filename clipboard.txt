@@ -1,7 +1,3 @@
-user@ubuntu-2gb-ash-1:~$ cp /path/to/downloads/manifest.json ~/cloud-screen/extension/
+cp /path/to/downloads/manifest.json ~/cloud-screen/extension/
 cp /path/to/downloads/background.js ~/cloud-screen/extension/
 cp /path/to/downloads/content.js ~/cloud-screen/extension/
-cp: cannot stat '/path/to/downloads/manifest.json': No such file or directory
-cp: cannot stat '/path/to/downloads/background.js': No such file or directory
-cp: cannot stat '/path/to/downloads/content.js': No such file or directory
-user@ubuntu-2gb-ash-1:~$
