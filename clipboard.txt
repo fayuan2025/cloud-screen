@@ -1,10 +1,2 @@
-# 1. Chrome 开机自启
-cat > ~/.config/autostart/chrome.desktop << 'EOF'
-[Desktop Entry]
-Type=Application
-Name=Chrome
-Exec=google-chrome --start-maximized
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-EOF
+本部餘額更新：2026-05-18    台灣餘額更新：2026-05-17																
+性正	1傳燈本部	本部：	259.16	CAD	湖山：	17,952.00	TWD	合计：	1,073.31	CAD
