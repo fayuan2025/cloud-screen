@@ -1,3 +1,1 @@
-user@ubuntu-2gb-ash-1:~$ ps aux | grep main.py
-user       15566  3.2  4.5 390128 89452 ?        Ssl  May17  19:23 /home/user/cloud-screen/venv/bin/python3 /home/user/cloud-screen/main.py
-user       73946  0.0  0.1   6676  2340 pts/0    S+   02:14   0:00 grep --color=auto main.py
+你
