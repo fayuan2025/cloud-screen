@@ -1,1 +1,1 @@
-DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+v
+DISPLAY=:0 xdotool search --class chrome type --clearmodifiers "测试123"
