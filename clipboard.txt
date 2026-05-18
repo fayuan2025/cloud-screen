@@ -1,4 +1,4 @@
-python3 << 'PYEOF'
+user@ubuntu-2gb-ash-1:~$ python3 << 'PYEOF'
 import requests, time
 
 URL = 'https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec'
@@ -17,3 +17,9 @@ print('读取结果:', r.text[:50])
 
 print('完成 ✅')
 PYEOF
+测试保存...
+保存结果: ok
+测试读取...
+读取结果: 自动测试ABC
+完成 ✅
+user@ubuntu-2gb-ash-1:~$
