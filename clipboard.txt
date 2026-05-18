@@ -1,1 +1,1 @@
-sleep 2 && DISPLAY=:0 xdotool search --class chrome type --clearmodifiers --delay 100 "测试"
+sleep 2 && echo "测试一二三" | DISPLAY=:0 xclip -selection clipboard && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers ctrl+v
