@@ -1,1 +1,19 @@
-https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec?action=get
+python3 << 'PYEOF'
+import requests, time
+
+URL = 'https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec'
+
+# 测试保存
+print('测试保存...')
+r = requests.get(URL + '?action=save&text=自动测试ABC', allow_redirects=True)
+print('保存结果:', r.text[:50])
+
+time.sleep(1)
+
+# 测试读取
+print('测试读取...')
+r = requests.get(URL + '?action=get', allow_redirects=True)
+print('读取结果:', r.text[:50])
+
+print('完成 ✅')
+PYEOF
