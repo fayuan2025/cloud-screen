@@ -1,1 +1,1 @@
-DISPLAY=:0 xdotool search --class chrome type --clearmodifiers "测试123"
+sleep 3 && DISPLAY=:0 xdotool type --clearmodifiers "测试123"
