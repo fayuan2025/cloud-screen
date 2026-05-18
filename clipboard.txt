@@ -1,1 +1,1 @@
-今天从卡尔加里回到哈法，明天回到寺院。在外面太忙了，没时间和心情锻炼。希望以后能恢复锻炼，经常和你沟通。
+cd ~/cloud-screen && source venv/bin/activate && python3 main.py 2>&1 | grep -E "点击|输入|按键|错误|监听"
