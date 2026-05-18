@@ -1,25 +1,33 @@
-user@ubuntu-2gb-ash-1:~$ python3 << 'PYEOF'
-import requests, time
+python3 << 'PYEOF'
+import subprocess, requests, time, os
+ENV = dict(os.environ)
+ENV['DISPLAY'] = ':0'
 
 URL = 'https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec'
 
-# 测试保存
-print('测试保存...')
-r = requests.get(URL + '?action=save&text=自动测试ABC', allow_redirects=True)
-print('保存结果:', r.text[:50])
+# 1. 把测试文字放入云电脑剪贴板
+test_text = '云电脑同步测试XYZ'
+p = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE, env=ENV)
+p.communicate(input=test_text.encode('utf-8'))
+print('1. 已放入剪贴板:', test_text)
+time.sleep(0.5)
 
+# 2. 读取剪贴板确认
+r = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV)
+clip_content = r.stdout.decode('utf-8', errors='replace').strip()
+print('2. 剪贴板内容:', clip_content)
+
+# 3. 直接上传到 Apps Script
+r = requests.get(URL + '?action=save&text=' + requests.utils.quote(clip_content), allow_redirects=True)
+print('3. 上传结果:', r.text[:50])
 time.sleep(1)
 
-# 测试读取
-print('测试读取...')
+# 4. 读取确认
 r = requests.get(URL + '?action=get', allow_redirects=True)
-print('读取结果:', r.text[:50])
+print('4. 读取结果:', r.text[:50])
 
-print('完成 ✅')
+if r.text.strip() == clip_content:
+    print('✅ 成功！云电脑→本机剪贴板同步正常')
+else:
+    print('❌ 失败，内容不符')
 PYEOF
-测试保存...
-保存结果: ok
-测试读取...
-读取结果: 自动测试ABC
-完成 ✅
-user@ubuntu-2gb-ash-1:~$
