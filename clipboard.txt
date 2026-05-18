@@ -1,34 +1,39 @@
-好！根据所有对话历史，这是完整总结：
+好！这个程序叫**云电脑控制系统**，由三部分组成：
 
 ---
 
-**学校怎么控制你的电脑：**
+**第一部分：云电脑上的 main.py**
 
-**1. Chrome 企业策略（最核心）**
-学校用 Chrome Enterprise Policy 控制整个浏览器，学校账号 `@gebis.org` 是**主账号**，绑定所有管控策略，即使切换到个人 Gmail 也无法绕过。
-
-**2. 网址封锁**
-- ❌ `remotedesktop.google.com`（Chrome Remote Desktop）
-- ❌ `claude.ai`
-- ❌ `trycloudflare.com` 等隧道工具
-- ❌ 非标准端口
-- ✅ 只有 Google 自己的服务（Drive、Sheet、Script）可以用
-
-**3. Google Workspace 账号管控**
-- 学校账号由 IT 管理员统一管理
-- Apps Script 有额外 CORS 限制（你今天才发现）
-- Google Meet 被关闭
-- `remotedesktop.google.com` 强制跳回学校账号
-
-**4. 软件安装限制**
-- 本机不能安装软件
-- AnyDesk 是管理员装的，你无法升级
-
-**5. 账号切换限制**
-- 必须先用学校账号登录，才能添加个人 Gmail
-- 某些网址输入后自动跳回学校账号
+在云电脑后台运行，负责：
+- 每秒截图上传到 Google Drive
+- 监听 GitHub 上的命令文件
+- 收到命令后执行：点击鼠标、输入文字、按键、粘贴到Doc等
+- 监听云电脑剪贴板变化，自动上传到 GitHub
 
 ---
 
-**你绕过的方法：**
-用 Apps Script + GitHub + Google Drive 做了一套完整的云电脑控制系统，完全在 Google 生态内运行，学校无法封锁 ✅
+**第二部分：本机控制面板（Apps Script Web App）**
+
+在本机浏览器打开，负责：
+- 显示云电脑实时截图（每秒刷新）
+- 点击屏幕控制鼠标
+- 工具栏按钮：全选、复制、发送文字、滚动、读取剪贴板、写入Doc
+- 把命令写入 GitHub，云电脑收到后执行
+
+---
+
+**第三部分：云电脑的剪贴板同步页面**
+
+云电脑打开 `网址?mode=clip`，负责：
+- 读取云电脑浏览器剪贴板
+- 上传到 GitHub
+- 本机点"读取剪贴板"就能看到内容
+
+---
+
+**整体流程：**
+```
+本机 → GitHub → 云电脑（命令）
+云电脑 → Google Drive → 本机（截图）
+云电脑 → GitHub → 本机（剪贴板）
+```
