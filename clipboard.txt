@@ -1,1 +1,19 @@
-你
+exec:9 Unrecognized feature: 'ambient-light-sensor'.
+exec:9 Unrecognized feature: 'speaker'.
+exec:9 Unrecognized feature: 'vibrate'.
+exec:9 Unrecognized feature: 'vr'.
+about:blank:1 An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing.
+userCodeAppPanel?createOAuthDialog=true:1 Unrecognized feature: 'ambient-light-sensor'.
+userCodeAppPanel?createOAuthDialog=true:1 Unrecognized feature: 'speaker'.
+userCodeAppPanel?createOAuthDialog=true:1 Unrecognized feature: 'vibrate'.
+userCodeAppPanel?createOAuthDialog=true:1 Unrecognized feature: 'vr'.
+userCodeAppPanel?createOAuthDialog=true:1 Access to fetch at 'https://script.google.com/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070367057' from origin 'https://n-qv2xn3ff3d5ne6njlfdb3n72nkfk62cxeyo7kqq-0lu-script.googleusercontent.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070367057:1  Failed to load resource: net::ERR_FAILED
+userCodeAppPanel?createOAuthDialog=true:1 Access to fetch at 'https://script.google.com/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070393190' from origin 'https://n-qv2xn3ff3d5ne6njlfdb3n72nkfk62cxeyo7kqq-0lu-script.googleusercontent.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070393190:1  Failed to load resource: net::ERR_FAILED
+userCodeAppPanel?createOAuthDialog=true:1 Access to fetch at 'https://script.google.com/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070442191' from origin 'https://n-qv2xn3ff3d5ne6njlfdb3n72nkfk62cxeyo7kqq-0lu-script.googleusercontent.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070442191:1  Failed to load resource: net::ERR_FAILED
+userCodeAppPanel?createOAuthDialog=true:1 Access to fetch at 'https://script.google.com/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070463185' from origin 'https://n-qv2xn3ff3d5ne6njlfdb3n72nkfk62cxeyo7kqq-0lu-script.googleusercontent.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070463185:1  Failed to load resource: net::ERR_FAILED
+userCodeAppPanel?createOAuthDialog=true:1 Access to fetch at 'https://script.google.com/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070489193' from origin 'https://n-qv2xn3ff3d5ne6njlfdb3n72nkfk62cxeyo7kqq-0lu-script.googleusercontent.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+/a/gebis.org/macros/s/AKfycbyfLBp_PeaUfdAft55cuGpgpwkK7cEXxmCLFGStLzteP0IcdnGmZNfSOpb1jfuvrIECdg/exec?action=img&t=1779070489193:1  Failed to load resource: net::ERR_FAILED
