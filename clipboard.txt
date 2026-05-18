@@ -1,1 +1,26 @@
-sleep 3 && DISPLAY=:0 xdotool search --class chrome key --clearmodifiers KP_Enter
+python3 << 'PYEOF'
+import subprocess, time, os
+ENV = dict(os.environ)
+ENV['DISPLAY'] = ':0'
+
+methods = [
+    "Return",
+    "KP_Enter", 
+    "ctrl+Return",
+    "shift+Return",
+    "super+Return",
+]
+
+print('3秒后开始，请点击Claude.ai输入框并输入一个字！')
+time.sleep(3)
+
+for key in methods:
+    # 先输入测试字
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '100', '发'], env=ENV)
+    time.sleep(0.5)
+    print(f'测试: {key}')
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', key], env=ENV)
+    time.sleep(3)
+
+print('完成！看哪个方法发送了消息 ✅')
+PYEOF
