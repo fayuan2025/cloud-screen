@@ -1,1 +1,7 @@
-pkill -f main.py && sleep 1 && cd ~/cloud-screen && source venv/bin/activate && python3 main.py
+截图 03:33:18
+截图 03:33:22
+截图 03:33:24
+测输入: 测
+测发送+Enter
+截图 03:33:30
+截图 03:33:34
