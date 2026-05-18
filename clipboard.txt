@@ -1,1 +1,35 @@
-测试ABC123
+python3 << 'PYEOF'
+with open('/home/user/cloud-screen/main.py', 'r') as f:
+    content = f.read()
+
+old = """def type_text(text):
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '100', text], env=ENV)
+    print('输入: ' + text[:20])"""
+
+new = """def type_text(text):
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'type', '--clearmodifiers', '--delay', '100', text], env=ENV)
+    print('输入: ' + text[:20])
+
+def type_text_enter(text):
+    type_text(text)
+    time.sleep(0.5)
+    subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'Return'], env=ENV)
+    print('发送+Enter')"""
+
+content = content.replace(old, new)
+
+old2 = """            elif cmd.get('type') == 'type_enter':
+                type_text(cmd.get('text', ''))
+                time.sleep(0.5)
+                subprocess.run(['xdotool', 'search', '--class', 'chrome', 'key', '--clearmodifiers', 'Return'], env=ENV)
+                print('发送+Enter')"""
+
+new2 = """            elif cmd.get('type') == 'type_enter':
+                type_text_enter(cmd.get('text', ''))"""
+
+content = content.replace(old2, new2)
+
+with open('/home/user/cloud-screen/main.py', 'w') as f:
+    f.write(content)
+print('完成 ✅')
+PYEOF
