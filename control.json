@@ -1,1 +1,1 @@
-{"type":"click","x":497,"y":686,"id":1779216339526}
+{"type":"type_enter","text":"function sendCmd(cmd) { queue.push(cmd); processQueue(); }\n    function sendKey(key) { sendCmd({ type: 'key', key: key, id: Date.now() }); }\n    function sendScroll(dir) { sendCmd({ type: 'scroll', dir: dir, times: 5, id: Date.now() }); }","id":1779216348223}
