@@ -8,7 +8,7 @@
 // @connect      script.google.com
 // ==/UserScript==
 
-const SYNC_URL = 'https://script.google.com/macros/s/AKfycbwan7_DdNAQnCexuG-CiZjB2EWG39g9clCfS8dju6I0lXTc48Hs95uhJLhf44xSXVWaww/exec';
+const SYNC_URL = 'https://script.google.com/macros/s/AKfycbzWWz16fB_wjd0Ymgyf80RveWvXSKbsvHK0MYhimYgbfMgrUaKLMrmoZ0-2xmmP102U/exec';
 
 let lastText = '';
 
