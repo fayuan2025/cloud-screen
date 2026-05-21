@@ -1,1 +1,1 @@
-{"text": "sudo journalctl -u cloud-screen -f --no-pager", "html": "", "time": "21:38:56"}
+{"text": "\u597d\uff01\n\n```bash\nsudo journalctl -u cloud-screen -f --no-pager\n```", "html": "", "time": "21:39:49"}
