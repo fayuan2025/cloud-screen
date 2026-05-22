@@ -1,1 +1,1 @@
-{"text": "# \u751f\u62101000\u884c\u6d4b\u8bd5\u5185\u5bb9\npython3 -c \"print('\\n'.join(['\u7b2c'+str(i)+'\u884c\uff1a\u6d4b\u8bd5\u5185\u5bb9abcdefghijk' for i in range(1000)]))\" > /tmp/big_test.txt\nwc -c /tmp/big_test.txt", "html": "", "time": "12:15:00"}
+{"text": "root@ubuntu-2gb-ash-1:~# # \u751f\u62101000\u884c\u6d4b\u8bd5\u5185\u5bb9\r\npython3 -c \"print('\\n'.join(['\u7b2c'+str(i)+'\u884c\uff1a\u6d4b\u8bd5\u5185\u5bb9abcdefghijk' for i in range(1000)]))\" > /tmp/big_test.txt\r\nwc -c /tmp/big_test.txt\r\n35890 /tmp/big_test.txt", "html": "", "time": "12:15:15"}
