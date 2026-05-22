@@ -1,1 +1,1 @@
-{"type":"type_enter","text":"# 1. 读取剪贴板\nprint('=== 读取剪贴板 ===')\nr = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], capture_output=True, env=ENV, timeout=2)\ntext = r.stdout.decode('utf-8', errors='replace').strip()\nPYEOFrint('❌ 失败:', r3.text[:200])[:30])ders, json=body, timeout=10).decode()})ents/clipboard.j\n=== 读取剪贴板 ===\n内容: ''\n剪贴板空，用测试内容: 测试内容_00:14:32\n\n=== 上传到 GitHub ===\nGET 状态: 200\nSHA: f5258782e4\nPUT 状态: 200\n✅ 上传成功！内容: 测试内容_00:14:32","id":1779408984073}
+{"type":"scroll","dir":"down","times":5,"id":1779409023762}
