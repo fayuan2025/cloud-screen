@@ -1,1 +1,1 @@
-{"text": "_id = get_current_id()\r\nt1 = threading.Thread(target=screenshot_loop, daemon=True)\r\nt2 = threading.Thread(target=listener_loop, daemon=True)\r\nt3 = threading.Thread(target=clipboard_loop, daemon=True)\r\nt1.start()\r\nt2.start()\r\nt3.start()\r\nprint('\u622a\u56fe\u548c\u76d1\u542c\u5df2\u542f\u52a8\uff01')\r\nwhile True:\r\n    time.sleep(10)", "html": "", "time": "12:27:48"}
+{"text": "\u77ed\u7684\u53ef\u4ee5\u55ce", "html": "", "time": "12:45:28"}
