@@ -1,1 +1,1 @@
-{"text": "pkill -f main.py && cd ~/cloud-screen && source venv/bin/activate && DISPLAY=:0 nohup python3 main.py > /tmp/cloud.log 2>&1 & sleep 3 && tail /tmp/cloud.log", "html": "", "time": "15:54:44"}
+{"text": "pkill -f main.py && cd ~/cloud-screen && source venv/bin/activate && DISPLAY=:0 nohup python3 main.py > /tmp/cloud.log 2>&1 & sleep 3 && tail /tmp/cloud.log", "html": "", "time": "15:54:53"}
