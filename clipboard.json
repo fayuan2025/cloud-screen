@@ -1,1 +1,1 @@
-{"text": "root@ubuntu-2gb-ash-1:/home/user/cloud-screen# # \u4e91\u7535\u8111\u4e0a\u8fd0\u884c\r\ncat ~/cloud-screen/main.py\r\ncat: /root/cloud-screen/main.py: No such file or directory", "html": "", "time": "12:25:40"}
+{"text": "cat /home/user/cloud-screen/main.py", "html": "", "time": "12:27:27"}
