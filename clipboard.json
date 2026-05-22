@@ -1,1 +1,1 @@
-{"text": "user@ubuntu-2gb-ash-1:~$ pkill -f main.py && cd ~/cloud-screen && source venv/bin/activate && DISPLAY=:0 nohup python3 main.py > /tmp/cloud.log 2>&1 & sleep 3 && tail /tmp/cloud.log\r\n[1] 2713\r\nnohup: ignoring input", "html": "", "time": "15:55:01"}
+{"text": "sleep 5 && cat /tmp/cloud.log", "html": "", "time": "15:55:18"}
