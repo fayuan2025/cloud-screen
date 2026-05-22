@@ -1,1 +1,1 @@
-{"text": "document.dispatchEvent(new ClipboardEvent('copy'))\ntrue", "html": "", "time": "11:45:13"}
+{"text": "javascript:(function(){navigator.clipboard.readText().then(function(t){if(!t)return alert('\u526a\u8d34\u677f\u7a7a');fetch('https://script.google.com/macros/s/AKfycbzi1ySPsxEF_SCS94kEumSlB99oYg1cXkyUX0Gg8ku5vP0MgFW9QRq4JwEKFBpHZtJRHA/exec?action=save_clip&text='+encodeURIComponent(t)).then(function(){alert('\u2705 \u5df2\u540c\u6b65\uff01')})}).catch(function(e){alert('\u9519\u8bef:'+e)})})();", "html": "", "time": "11:47:14"}
