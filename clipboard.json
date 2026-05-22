@@ -1,1 +1,1 @@
-{"text": "tail -20 /tmp/cloud.log", "html": "", "time": "16:02:09"}
+{"text": "user@ubuntu-2gb-ash-1:~$ tail -20 /tmp/cloud.log\r\nnohup: ignoring input", "html": "", "time": "16:02:58"}
