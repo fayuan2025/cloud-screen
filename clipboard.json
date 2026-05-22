@@ -1,1 +1,1 @@
-{"text": "sudo systemctl status cloud-screen | grep Active", "html": "", "time": "11:43:54"}
+{"text": "root@ubuntu-2gb-ash-1:~# sudo systemctl status cloud-screen | grep Active\r\n     Active: active (running) since Fri 2026-05-22 11:39:59 UTC; 3min 58s ago", "html": "", "time": "11:44:01"}
