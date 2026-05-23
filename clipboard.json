@@ -1,1 +1,1 @@
-{"text": "cd ~/cloud-screen && source venv/bin/activate && DISPLAY=:0 nohup python3 main.py > /tmp/cloud.log 2>&1 &", "html": "", "time": "18:51:13"}
+{"text": "cd ~/cloud-screen && source venv/bin/activate && DISPLAY=:0 python3 main.py", "html": "", "time": "18:52:03"}
