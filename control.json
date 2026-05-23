@@ -1,1 +1,1 @@
-{"type":"click","x":308,"y":694,"id":1779556911848}
+{"type":"type_enter","text":"问个问题，当本机的图片出现锁屏session locked，我用这条指令可以解屏。\npkill -f \"light-locker\" && echo \"✅ 杀掉 light-locker\" || echo \"无此进程\"\n\n请告诉我一跳指令，又马上恢复锁屏，可以吗？","id":1779556996122}
