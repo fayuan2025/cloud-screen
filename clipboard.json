@@ -1,1 +1,1 @@
-{"text": "https://script.google.com/macros/s/AKfycbxxkxmRkkHodtxMV50sjiQwIZ9ep5o9nCaRyGfIvOmolAUfJS3A0c-HW8N9h7o273G19w/exec", "html": "", "time": "19:05:51"}
+{"text": "pkill -f main.py; sleep 1; sed -i \"s|https://script.google.com/macros/s/AKfycbzJbllTjWyrB9mMJ7e3izV23q2OmEZQYN32WZmSIdM_T6x8ehWPgze2SD8e_CgrTkG9/exec|https://script.google.com/macros/s/AKfycbxxkxmRkkHodtxMV50sjiQwIZ9ep5o9nCaRyGfIvOmolAUfJS3A0c-HW8N9h7o273G19w/exec|g\" ~/cloud-screen/main.py && echo \"\u2705 URL\u5df2\u66f4\u65b0\"", "html": "", "time": "19:06:52"}
