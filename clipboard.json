@@ -1,1 +1,1 @@
-{"text": "(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ python3 -c \"\r\nimport requests\r\nr = requests.post('https://script.google.com/macros/s/AKfycbxUqsJwDBNyJ1GPp9rtaLn65lQDU16w4LzMtUcYgNrNdnJSfE5-TTBoP1pTzHIYNHSqBg/exec', json={'action':'save_clip','text':'\u6d4b\u8bd5123'}, timeout=15)\r\nprint(r.status_code, r.text[:100])\r\n\"\r\n200 ok", "html": "", "time": "20:02:15"}
+{"text": "cd ~/cloud-screen && source venv/bin/activate && DISPLAY=:0 python3 main.py", "html": "", "time": "20:02:52"}
