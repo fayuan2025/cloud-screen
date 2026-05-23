@@ -1,1 +1,1 @@
-{"text": "xclip -selection clipboard -o | wc -c", "html": "", "time": "19:48:39"}
+{"text": "(venv) user@ubuntu-2gb-ash-1:~/cloud-screen$ xclip -selection clipboard -o | wc -c\r\nError: Can't open display: (null)\r\n0", "html": "", "time": "19:49:42"}
